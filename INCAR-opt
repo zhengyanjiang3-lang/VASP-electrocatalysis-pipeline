@@ -1,0 +1,57 @@
+Collinear Magnetic Calculation
+ISPIN      =  2        (Spin polarised DFT)
+LASPH      = .TRUE.    (Non-spherical elements; d/f convergence)
+MAGMOM     =  (set up by yourself according to your POSCAR)
+GGA_COMPAT = .FALSE.   (Apply spherical cutoff on gradient field)
+VOSKOWN    =  1        (Enhances the magnetic moments and the magnetic energies)
+LMAXMIX    =  4        (For d elements increase LMAXMIX to 4, f: LMAXMIX = 6)
+AMIX       =  0.2    (Mixing parameter to control SCF convergence)
+BMIX       =  0.0001 (Mixing parameter to control SCF convergence)
+AMIX_MAG   =  0.4    (Mixing parameter to control SCF convergence)
+BMIX_MAG   =  0.0001 (Mixing parameter to control SCF convergence)
+LPLANE = .TRUE.
+LSCALU =.FALSE.
+NSIM =4
+
+DFT-D3 Correction
+IVDW   =  11           (DFT-D3 method of method with no damping)
+
+Global Parameters
+ISTART =  0            (Read existing wavefunction; if there)
+LREAL  = Auto       (Projection operators: automatic)
+ALGO = Normal
+ENCUT  =  500        (Cut-off energy for plane wave basis set, in eV)
+PREC   =  Normal       (Precision level)
+LWAVE  = .TRUE.        (Write WAVECAR or not)
+LCHARG = .FALSE.        (Write CHGCAR or not)
+LVTOT =  .FALSE.         (do not write LOCPOT file)
+ADDGRID= .TRUE.        (Increase grid; helps GGA convergence)
+Electronic Relaxation
+ISMEAR =  0            (Gaussian smearing; metals:1)
+SIGMA  =  0.05         (Smearing value in eV; metals:0.2)
+NELM   =  90           (Max electronic SCF steps)
+NELMIN =  6            (Min electronic SCF steps)
+NELMDL= -20
+EDIFF  =  1E-05        (SCF energy convergence; in eV)
+# GGA  =  PS           (PBEsol exchange-correlation)
+
+LSOL  = .TRUE.
+EB_K        = 80
+TAU         = 0.0
+SIGMA_K     = 0.6
+NC_K        = 0.0025
+LAMBDA_D_K  = 3.0
+LDIPOL      = .TRUE.    # slab Â½Â¨Ã�Ã©
+IDIPOL      = 3
+
+Ionic Relaxation
+NSW = 1000
+IBRION =  2            (Algorithm: 0-MD; 1-Quasi-New; 2-CG)
+ISIF   =  2            (Stress/relaxation: 2-Ions, 3-Shape/Ions/V, 4-Shape/Ions)
+EDIFFG = -1E-02        (Ionic convergence; eV/AA)
+# ISYM =  2            (Symmetry: 0=none; 2=GGA; 3=hybrids)
+POTIM = 0.2
+
+LORBIT = 12
+
+NCORE = 8
