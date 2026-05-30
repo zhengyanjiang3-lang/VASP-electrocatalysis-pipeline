@@ -1,0 +1,50 @@
+# Collinear Magnetic Calculation
+ISPIN      =  2        (Spin polarised DFT)
+ISYM = 0
+LASPH      = .TRUE.    (Non-spherical elements; d/f convergence)
+GGA_COMPAT = .FALSE.   (Apply spherical cutoff on gradient field)
+VOSKOWN    =  1        (Enhances the magnetic moments and the magnetic energies)
+LMAXMIX    =  4        (For d elements increase LMAXMIX to 4, f: LMAXMIX = 6)
+AMIX       =  0.2    (Mixing parameter to control SCF convergence)
+BMIX       =  0.0001 (Mixing parameter to control SCF convergence)
+AMIX_MAG   =  0.4    (Mixing parameter to control SCF convergence)
+BMIX_MAG   =  0.0001 (Mixing parameter to control SCF convergence)
+LPLANE = .TRUE.
+LSCALU =.FALSE.
+NSIM =4
+# DFT-D3 Correction
+IVDW   =  11           (DFT-D3 method of method with no damping)
+
+# Global Parameters
+ISTART =  0            (Read existing wavefunction from previous calculation)
+LREAL  = .FALSE.       (Projection operators: real-space projection disabled for frequency)
+ENCUT  =  500          (Cut-off energy for plane wave basis set, in eV)
+PREC   =  Accurate     (Precision level)
+LWAVE  = .TRUE.        (Write WAVECAR)
+LCHARG = .TRUE.        (Write CHGCAR)
+ADDGRID= .TRUE.        (Increase grid; helps GGA convergence)
+
+# Electronic Relaxation
+ISMEAR =  0            (Gaussian smearing; metals:1)
+SIGMA  =  0.05         (Smearing value in eV; metals:0.2)
+NELM   =  90           (Max electronic SCF steps)
+NELMIN =  6            (Min electronic SCF steps)
+EDIFF  =  1E-7         (SCF energy convergence; in eV, tighter for frequency)
+EDIFFG = -1E-02
+# Frequency Calculation
+IBRION =  5            (Frequency calculation)
+NFREE  =  2            (Central difference for numerical derivatives)
+POTIM  =  0.015        (Step size for finite differences, in Angstrom)
+NSW    =  1            (Only one ionic step for frequency calculation)
+
+LSOL  = .TRUE.
+EB_K        = 80
+TAU         = 0.0
+SIGMA_K     = 0.6
+NC_K        = 0.0025
+LAMBDA_D_K  = 3.0
+LDIPOL      = .TRUE.    # slab ½¨Òé
+IDIPOL      = 3
+
+
+LORBIT = 12
