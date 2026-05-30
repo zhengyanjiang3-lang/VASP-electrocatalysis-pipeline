@@ -1,5 +1,6 @@
 # Collinear Magnetic Calculation
 ISPIN      =  2        (Spin polarised DFT)
+MAGMOM     =  (set up by yourself according to your POSCAR)
 ISYM = 0
 LASPH      = .TRUE.    (Non-spherical elements; d/f convergence)
 GGA_COMPAT = .FALSE.   (Apply spherical cutoff on gradient field)
