@@ -36,6 +36,16 @@ NELM   = 200
 NELMIN = 6
 EDIFF  = 1E-06
 
+VASPsol
+LSOL       = .TRUE.
+EB_K       = 80
+TAU        = 0.0
+SIGMA_K    = 0.6
+NC_K       = 0.0025
+LAMBDA_D_K = 3.0
+LDIPOL     = .TRUE.
+IDIPOL     = 3
+
 Single Point
 NSW    = 0
 IBRION = -1
