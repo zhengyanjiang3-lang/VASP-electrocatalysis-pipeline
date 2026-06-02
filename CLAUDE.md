@@ -2,7 +2,7 @@ IMPORTANT: Before performing any VASP calculation task, always read and follow t
 
 ---
 name: vasp-workflow
-description: VASP calculation workflow for structure optimization (opt) and zero-point energy (ZPE) calculations. Trigger when the user mentions "结构优化", "opt", "zpe", "zpe计算". Covers INCAR/POSCAR/KPOINTS/POTCAR generation, atom fixing, and sub.sh configuration.
+description: VASP calculation workflow for structure optimization (opt) and zero-point energy (ZPE) calculations. Trigger when the user mentions "结构优化", "opt", "zpe", "zpe计算","single point","单点能计算","single point calculation". Covers INCAR/POSCAR/KPOINTS/POTCAR generation, atom fixing, and sub.sh configuration.
 ---
 
 # VASP Calculation Workflow
