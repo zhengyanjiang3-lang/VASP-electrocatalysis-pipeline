@@ -281,3 +281,13 @@ Fill the result into the `G` column.
 - The header cells (`金属`, `Energy`, `ZPE`, `TS`, `G`, `ΔG`) must be styled with a **light blue** background fill.
 - Use `openpyxl` (or equivalent) to create the `.xlsx` file with the cell fill applied.
 
+**In addition,** if you need single point calculation:
+
+Convert the relaxation job in <METAL>/<FOLDER> into a solvation single-point calculation, using my prepared INCAR-sp as the single-point INCAR template. Steps:
+
+Copy INCAR-sp into the folder as INCAR (overwriting the old relaxation INCAR).   Do not change POTCAR or KPOINTS — keep the folder's existing ones.
+Rename the folder's existing log to log-opt to preserve the relaxation record.
+cp CONTCAR POSCAR (so the single point starts from the relaxed geometry).
+Fix MAGMOM in the new INCAR to match this structure: read the element symbols and counts from POSCAR lines 6–7, and write MAGMOM so its total equals the POSCAR total atom count (otherwise VASP errors).
+Update SYSTEM in INCAR and #PBS -N in sub.sh to <METAL>-<FOLDER>-sp (the copied sub.sh carries the reference folder's name — change it).
+Verify and report back: POSCAR atom count vs MAGMOM total match, NSW/IBRION/LSOL values, job name, that log is now log-opt, and that POSCAR equals CONTCAR.
